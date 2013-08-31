@@ -1,4 +1,5 @@
 require "csv"
+require 'open-uri'
 
 namespace :path do
   task :import, [:url] => :environment do |t, args|
