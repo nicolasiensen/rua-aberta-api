@@ -1,4 +1,4 @@
-require "CSV"
+require "csv"
 
 namespace :path do
   task :import, [:url] => :environment do |t, args|
