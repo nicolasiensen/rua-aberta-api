@@ -11,14 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130831211152) do
+ActiveRecord::Schema.define(:version => 20130831220141) do
 
   create_table "paths", :force => true do |t|
-    t.string   "point_a"
-    t.string   "point_b"
     t.boolean  "parking"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "lat_a"
+    t.string   "lat_b"
+    t.string   "lng_a"
+    t.string   "lng_b"
   end
 
   create_table "reports", :force => true do |t|
