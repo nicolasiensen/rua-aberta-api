@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  point_a: MyString
+  point_b: MyString
+  parking: false
+
+two:
+  point_a: MyString
+  point_b: MyString
+  parking: false
