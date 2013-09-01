@@ -2,9 +2,9 @@ require "csv"
 require 'open-uri'
 
 namespace :path do
-  task :import, [:url] => :environment do |t, args|
+  task :import => :environment do |t, args|
     regex = /(\d+)[[\s-]|[\sAa]|[\sEe]]+(\d+)/
-    CSV.parse(open(args[:url]), {headers: true}) do |row|
+    CSV.parse(open("#{Rails.root}/lib/tasks/riorot.csv"), {headers: true}) do |row|
       puts row
       if row[10] && row[10].match(regex)
         a, b = row[10].match(regex).captures
