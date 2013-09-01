@@ -1,3 +1,3 @@
 class ComplaintsController < InheritedResources::Base
-  respond_to :json
+  respond_to :html, :json
 end
