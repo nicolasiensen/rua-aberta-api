@@ -11,7 +11,7 @@ class Complaint < ActiveRecord::Base
     puts message_officer
     puts message_owner
     blowerio = RestClient::Resource.new(ENV['BLOWERIO_URL'])
-    blowerio['/messages'].post :to => '+552195744758', :message => message_officer
-    blowerio['/messages'].post :to => '+552199206052', :message => message_owner
+    blowerio['/messages'].post :to => '+552195551515', :message => message_officer
+    blowerio['/messages'].post :to => '+552181417844', :message => message_owner
   end
 end
