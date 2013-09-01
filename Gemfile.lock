@@ -37,6 +37,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    delayed_job (3.0.5)
+      activesupport (~> 3.0)
+    delayed_job_active_record (0.3.3)
+      activerecord (>= 2.1.0, < 4)
+      delayed_job (~> 3.0)
     erubis (2.7.0)
     execjs (2.0.1)
     geocoder (1.1.8)
@@ -84,6 +89,8 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     responders (0.6.5)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     sass (3.2.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -109,10 +116,12 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  delayed_job_active_record
   geocoder
   inherited_resources
   jquery-rails
   pg
   rails (= 3.2.13)
+  rest-client
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)

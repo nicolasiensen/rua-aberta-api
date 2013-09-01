@@ -1,5 +1,6 @@
 Ondeeuparo::Application.routes.draw do
-  resources :paths, only: :index
+  resources :paths,       only: :index
+  resources :complaints,  only: :create
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

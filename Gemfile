@@ -39,3 +39,5 @@ gem 'jquery-rails'
 
 gem 'inherited_resources'
 gem 'geocoder'
+gem 'rest-client'
+gem 'delayed_job_active_record'
