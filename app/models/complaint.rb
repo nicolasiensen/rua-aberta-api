@@ -4,15 +4,14 @@ class Complaint < ActiveRecord::Base
 
   after_create { self.delay.send_sms }
 
-  private
-
-  def send_sms
-    geocoder = Geocoder.search("#{self.lat},#{self.lng}").first
-    message_officer = "#{self.category} placa #{self.car_plate} na #{geocoder.street} #{geocoder.house_number}, #{geocoder.suburb}"[0..159]
-    message_owner = "Seu carro placa #{self.car_plate} foi denunciado como '#{self.category}', o reboque foi acionado. Run Forest, run!"[0..159]
+  def self.send_sms
+    #geocoder = Geocoder.search("#{self.lat},#{self.lng}").first
+    message_officer = "Carro estacionado em local proibido placa KXO 1234 na Av. Sao Sebastiao 18, Urca"[0..159]
+    message_owner = "Seu carro Peugeot 207 placa KXO 1234 esta estacionado em local proibido, o reboque foi acionado. Run Forest, run"[0..159]
     puts message_officer
     puts message_owner
-    #blowerio = RestClient::Resource.new(ENV['BLOWERIO_URL'])
-    #blowerio['/messages'].post :to => '+552195744758', :message => message
+    blowerio = RestClient::Resource.new(ENV['BLOWERIO_URL'])
+    blowerio['/messages'].post :to => '+552195744758', :message => message_officer
+    blowerio['/messages'].post :to => '+552199206052', :message => message_owner
   end
 end
